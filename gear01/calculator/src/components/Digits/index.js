@@ -2,9 +2,9 @@ import  React  from "react";
 import Container from '../Container';
 import './index.css';
 
-const Digits = ({ digitNumnber, onSelectDigit, className }) =>
-    (<div className={`digit-box${className ? ` ${className}` : ''}`} onClick={() => onSelectDigit(digitNumnber)}>
-        {digitNumnber}
+const Digits = ({ digitNumber, onSelectDigit, className }) =>
+    (<div className={`digit-box${className ? ` ${className}` : ''}`} onClick={() => onSelectDigit(digitNumber)}>
+        {digitNumber}
     </div>);
 
 export default Digits
