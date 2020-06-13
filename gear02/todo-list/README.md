@@ -39,9 +39,17 @@ this property aria-labelledby, tells assistive technology the list heading as th
 ## Components
 
 ```
-<Todo />  
+<Todo />
+<Form/>
+<FilterButton/>  
 ```
-to reuse same logic in App.js, where iterate over the list of task, chores or stuff to remind 
+- Todo is the main component, and basically is for iterate over the list of task, chores or stuff to remind. 
+
+- Form as a helper component to reuse the logic behind the create the task to remind.
+
+-FilterButton a helper component to reuse the logic behind the filter buttons option which are 3 All, Active, Completed
+
+
 
 ## Available Scripts
 
