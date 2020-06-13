@@ -5,6 +5,12 @@ import FilterButton from './components/FilterButton';
 // import logo from './logo.svg';
 import './App.css';
 
+
+// Handling form submission via callbacks
+function addTask(name) {
+  alert(name)
+};
+
 function App(props) {
   const taskList = props.tasks.map(task => (
     <Todo key={task.id} id={task.id} name={task.name} completed={task.completed}/>
@@ -12,7 +18,7 @@ function App(props) {
   return (
     <div className="todoapp stack-large">
       <h1>Remind me</h1>
-      <Form />
+      <Form addTask={addTask} />
       <div className="filters btn-group stack-exception">
         <FilterButton />
         <FilterButton />
