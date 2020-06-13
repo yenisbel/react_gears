@@ -36,6 +36,13 @@ Any element with this class will be hidden from sighted users and still availabl
 ```
 this property aria-labelledby, tells assistive technology the list heading as the label  describes the purpose of the list beneath it, think about it like a informative context, which could help screen reader users better understand
 
+## Components
+
+```
+<Todo />  
+```
+to reuse same logic in App.js, where iterate over the list of task, chores or stuff to remind 
+
 ## Available Scripts
 
 In the project directory, you can run:
