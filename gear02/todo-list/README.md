@@ -47,9 +47,7 @@ this property aria-labelledby, tells assistive technology the list heading as th
 
 - Form as a helper component to reuse the logic behind the create the task to remind.
 
--FilterButton a helper component to reuse the logic behind the filter buttons option which are 3 All, Active, Completed
-
-
+- FilterButton a helper component to reuse the logic behind the filter buttons option which are 3 All, Active, Completed 
 
 ## Available Scripts
 
@@ -76,8 +74,18 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br />
 Your To Do app is ready to be deployed!
 
-### Deployment
+## Deployment
 
 Really you can use any of the available free solution for deploys that offers an easy and intuitive path to put your app online, so far I've been using Zeit, called now Vercel and Netlify.
+
+## Notes
+
+To tackle the issue with the unique ids when adding tasks, here Remind me To DO uses the library nanoid.
+Make sure step you’re in the root directory and run the following terminal command:
+```
+npm install nanoid or yarn add nanoid
+```
+
+
 
 
