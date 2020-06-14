@@ -17,6 +17,7 @@ const FILTER_NAMES = Object.keys(FILTER_MAP);
 
 function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
+  const [filter, setFilter] = useState('All');
 
   function toggleTaskCompleted(id) {
     const updatedTasks = tasks.map(task => {
@@ -28,12 +29,14 @@ function App(props) {
     setTasks(updatedTasks);
   };
 
-  const taskList = tasks.map(task => (
-    <Todo key={task.id} id={task.id} name={task.name} completed={task.completed} toggleTaskCompleted={toggleTaskCompleted} deleteTask={deleteTask} />
+  const taskList = tasks
+    .filter(FILTER_MAP[filter])
+    .map(task => (
+      <Todo key={task.id} id={task.id} name={task.name} completed={task.completed} toggleTaskCompleted={toggleTaskCompleted} deleteTask={deleteTask} />
   ));
 
   const filterList = FILTER_NAMES.map(name => (
-    <FilterButton key={name} name={name}/>
+    <FilterButton key={name} name={name} isPressed={name === filter} setFilter={setFilter}/>
   ));
   const tasksNoun = (taskList.length === 1) ? 'Task' : 'Tasks';
   const headingText = `${taskList.length} ${tasksNoun} remaining`;
@@ -47,8 +50,6 @@ function App(props) {
     const remainingTasks = tasks.filter(task => id !== task.id);
     setTasks(remainingTasks);
   };
-
-  const [filter, setFilter] = useState('All');
 
   return (
     <div className="todoapp stack-large">
