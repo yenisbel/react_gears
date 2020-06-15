@@ -32,7 +32,7 @@ function App(props) {
   const taskList = tasks
     .filter(FILTER_MAP[filter])
     .map(task => (
-      <Todo key={task.id} id={task.id} name={task.name} completed={task.completed} toggleTaskCompleted={toggleTaskCompleted} deleteTask={deleteTask} />
+      <Todo key={task.id} id={task.id} name={task.name} completed={task.completed} toggleTaskCompleted={toggleTaskCompleted} deleteTask={deleteTask} editTask={editTask}/>
   ));
 
   const filterList = FILTER_NAMES.map(name => (
@@ -50,6 +50,16 @@ function App(props) {
     const remainingTasks = tasks.filter(task => id !== task.id);
     setTasks(remainingTasks);
   };
+
+  function editTask(id, newName) {
+    const editedTaskList = tasks.map(task => {
+      if (id === task.id) {
+        return {...task, name: newName}
+      }
+      return task;
+    });
+    setTasks(editedTaskList);
+  }
 
   return (
     <div className="todoapp stack-large">
